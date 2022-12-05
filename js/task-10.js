@@ -11,6 +11,8 @@ const div = document.querySelector("#boxes");
 
 btnCreate.addEventListener("click", (event) => createBoxes(input.value));
 
+const elements = [];
+
 function createBoxes(amount) {
   for (let i = 0; i < amount; i += 1) {
     const box = document.createElement("div");
@@ -18,8 +20,10 @@ function createBoxes(amount) {
     box.style.width = size;
     box.style.height = size;
     box.style.backgroundColor = getRandomHexColor();
-    div.append(box);
+    // div.append(box);
+    elements.push(box);
   }
+  div.append(...elements);
 }
 
 function destroyBoxes() {

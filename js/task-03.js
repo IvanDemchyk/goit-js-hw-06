@@ -15,12 +15,18 @@ const images = [
 
 const list = document.querySelector(".gallery");
 
-for (const img of images) {
-  const markup = `<li><img class="img-3" src="${img.url}" alt="${img.alt}"></li>`;
-  list.insertAdjacentHTML("beforeend", markup);
-}
+const markup = images
+  .map(
+    ({ url, alt }) => `<li><img class="img-3" src="${url}" alt="${alt}"></li>`
+  )
+  .join("");
+list.insertAdjacentHTML("beforeend", markup);
 
-// const markup = images
-//   .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
-//   .join("");
-// list.insertAdjacentHTML("beforeend", markup);
+// const array = [];
+
+// // for (const img of images) {
+// //   const markup = `<li><img class="img-3" src="${img.url}" alt="${img.alt}"></li>`;
+// //   list.insertAdjacentHTML("beforeend", markup);
+// //   array.push(markup);
+// //   console.log(array);
+// // }

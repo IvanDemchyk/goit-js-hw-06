@@ -9,9 +9,13 @@ const ingredients = [
 
 const list = document.querySelector(`#ingredients`);
 
+const elements = [];
+
 for (let i = 0; i < ingredients.length; i += 1) {
   const li = document.createElement(`li`);
   li.classList.add(`item`);
   li.textContent = ingredients[i];
-  list.append(li);
+
+  elements.push(li);
 }
+list.append(...elements);
